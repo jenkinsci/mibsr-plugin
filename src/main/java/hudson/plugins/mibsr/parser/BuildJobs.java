@@ -1,7 +1,6 @@
 package hudson.plugins.mibsr.parser;
 
 import hudson.model.AbstractBuild;
-import hudson.util.IOException2;
 import org.apache.maven.plugin.invoker.model.BuildJob;
 import org.apache.maven.plugin.invoker.model.io.xpp3.BuildJobXpp3Reader;
 import org.codehaus.plexus.util.xml.pull.XmlPullParserException;
@@ -88,7 +87,7 @@ public class BuildJobs
             }
             catch ( XmlPullParserException e )
             {
-                throw new IOException2( "Could not parse build job buildJobs file " + inFile, e );
+                throw new IOException( "Could not parse build job buildJobs file " + inFile, e );
             }
             finally
             {
